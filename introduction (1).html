@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>James Carl</title>
+
+<style>
+body {
+  height: 100vh;
+  width: 100%;
+}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+@font-face {
+  font-family: 'james';
+  src: url('/OldLondonAlternate.ttf');
+}
+
+.intro{
+  position: fixed;
+  width:100%;
+  height:100vh;
+  background: radial-gradient(circle, silver, black);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+  flex-direction:column;
+  transition: opacity 0.8s ease, visibility 0.8s;
+}
+
+.text{
+  font-family: "james";
+  color: black;
+  font-size:2.5rem;
+  letter-spacing:3px;
+  white-space:nowrap;
+  border-right:3px solid #00ffcc;
+  font-weight: bold;
+  width:0;
+  height: 1.9%;
+  overflow:hidden;
+  animation: typing 2s steps(12) forwards, blink 0.6s infinite;
+}
+
+@keyframes typing{
+  to{ width: 12ch; }
+}
+
+@keyframes blink{
+  50%{ border-color: transparent; }
+}
+
+.intro.hide{
+  opacity:0;
+  visibility:hidden;
+}
+
+.main{
+  opacity:0;
+  transform: translateY(20px);
+  transition: all 1s ease;
+  padding:50px;
+  text-align:center;
+  height: 100vh;
+  width: 100%;
+}
+
+.main.show{
+  opacity:1;
+  transform: translateY(0);
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 3%;
+    border: solid 2px white;
+  }
+  ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+  }
+  li a{
+    text-decoration: none;
+    color: black;
+    position: relative;
+    right: 20%;
+  }
+  .logo{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: solid 2px black;
+    color: black;
+    position: relative;
+    right: 30%;
+  }
+  .box1{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 400px;
+    width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 10px;
+  }
+  .boxes{
+    height: 250px;
+    width: 250px;
+    box-shadow: 0px 0px 10px;
+  }
+</style>
+</head>
+<body>
+<div class="intro">
+  <div class="text">James Carl</div>
+</div>
+<div class="main">
+  <nav>
+    <div class="logo"></div>
+    <ul>
+      <li><a href="#">About Me</a></li>
+      <li><a href="#">My Certificate</a></li>
+      <li><a href="#">About Me</a></li>
+    </ul>
+  </nav>
+</div>
+<div class="box1">
+  <div class="wrapper">
+    <div class="boxes"></div>
+    <div class="boxes"></div>
+    <div class="boxes"></div>
+  </div>
+</div>
+<script>
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.querySelector(".intro").classList.add("hide");
+    document.querySelector(".main").classList.add("show");
+  }, 3000);
+});
+</script>
+
+</body>
+</html>
